@@ -1,0 +1,8 @@
+{
+  "name": "ANWB_Fietsroutes",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

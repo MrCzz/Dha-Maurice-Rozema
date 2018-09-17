@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar class="hidden">
+    <ion-title>Slides</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tutorial-page">
+  <ion-slides pager color="primary">
+    <ion-slide *ngFor="let slide of slides">
+      <ion-toolbar>
+        <ion-buttons end>
+          <button (click)="continueOrSkipClicked()" ion-button color="primary">Skip</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img [src]="slide.image" class="slide-image" />
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <img src="./assets/images/img5.png" class="slide-image" />
+      <h2 class="slide-title">Klaar om uw route te maken?</h2>
+      <button ion-button large clear icon-end color="primary" (click)="continueOrSkipClicked()">
+              Ga door
+              <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

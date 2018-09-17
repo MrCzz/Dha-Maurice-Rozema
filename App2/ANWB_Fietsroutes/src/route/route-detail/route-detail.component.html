@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons end>
+      <button [navPush]="waypointPage" color="primary" ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>ANWB fietsroute</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col col-12>
+        <img src="./assets/images/placeholder_route.png" />
+      </ion-col>
+    </ion-row> -->
+    <ion-card *ngIf="isCycling">
+      <ion-card-header>
+        <b>Routeinformatie</b>
+      </ion-card-header>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-icon name="navigate" item-start large></ion-icon>
+            <h2>Knooppunt</h2>
+            <p *ngIf="locationService.getNextWaypoint() != undefined">{{locationService.getNextWaypoint().id}}</p>
+            <p *ngIf="locationService.getNextWaypoint() == undefined">-</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-icon name="locate" item-start middle></ion-icon>
+            <h2>Volgend:</h2>
+            <p *ngIf="locationService.getNextWayPointWithOffset(1) != undefined">{{locationService.getNextWayPointWithOffset(1).id}}</p>
+            <p *ngIf="locationService.getNextWayPointWithOffset(1) == undefined">-</p>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-icon name="navigate" item-start middle></ion-icon>
+            <h2>Distance</h2>
+            <p>{{locationService.calculateCurrentDistanceTravelled()}} km</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-icon name="time" item-start middle></ion-icon>
+            <h2>Duur:</h2>
+            <p>{{secondsToHms((time + previousTime))}}</p>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-icon name="speedometer" item-start middle></ion-icon>
+            <h2>AVG Speed:</h2>
+            <p>{{(locationService.calculateCurrentDistanceTravelled() / (((time + previousTime) / 60) / 60)).toFixed(2)}} km/h</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <b>Volledige route</b>
+      </ion-card-header>
+      <ion-row>
+          <ion-col col-12>
+            <ion-list>
+              <ion-item *ngFor="let location of locationService.locationData">
+                <ion-icon name="pin" item-start></ion-icon>
+                <h2>{{location.title}}</h2>
+                <p *ngIf="locationService.lat != undefined">{{location.distance}} km</p>
+                <ion-icon *ngIf="location.passed == true" style="color: green;" name="checkmark-circle" item-end></ion-icon>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <timer [interval] = "1000" (timeOutput) = "updateTime($event)" (previousTimeOutput) = "updatePreviousTime($event)" (isCyclingOutput) = "updateIsCycling($event)" ></timer>
+  </ion-grid>
+
+</ion-content>

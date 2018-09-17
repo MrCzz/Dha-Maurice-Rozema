@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Training #{{history.id}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <ion-card>
+              <ion-card-header>
+                <b>Training #{{ history.id }}</b>
+              </ion-card-header>
+
+              <ion-item>
+                <ion-icon name="calendar" item-left large ></ion-icon>
+                <h2>Datum</h2>
+                <p>{{ history.date }}</p>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="navigate" item-start large></ion-icon>
+                <h2>Afstand</h2>
+                <p>{{ history.distance }} kilometer</p>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="time" item-left large ></ion-icon>
+                <h2>Duur</h2>
+                <p>{{ history.time }} minuten</p>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="speedometer" item-left large ></ion-icon>
+                <h2>Gemiddelde snelheid</h2>
+                <p>{{ history.speed }} km per uur</p>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="pin" item-left large ></ion-icon>
+                <h2>Beginpunt</h2>
+                <p>Knooppunt {{ history.startPoint }}</p>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="pin" item-left large ></ion-icon>
+                <h2>Eindpunt</h2>
+                <p>Knooppunt {{ history.endPoint }}</p>
+              </ion-item>
+
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      DHA-Calculator Maurice Rozema
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--<div id="container"> -->
+  <ion-content padding>
+    <div class="errorMessage">{{errorMessage}}</div>
+    <div class="calcResult">{{displayValue}}</div>
+    <div class="numpad">
+      <br />
+      <button (click)="removeAllCalc()" ion-button color="secondary">DEL</button>
+      <button (click)="touchUnaryOperation($event)" ion-button color="secondary">COS</button>
+      <button (click)="touchUnaryOperation($event)" ion-button color="secondary">±</button>
+      <button (click)="touchUnaryOperation($event)" ion-button color="secondary">√</button>
+      <br />
+      <button (click)="touchDigit($event)" ion-button color="light">7</button>
+      <button (click)="touchDigit($event)" ion-button color="light">8</button>
+      <button (click)="touchDigit($event)" ion-button color="light">9</button>
+      <button (click)="touchBinaryOperation($event)" ion-button color="secondary">÷</button>
+      <br />
+      <button (click)="touchDigit($event)" ion-button color="light">4</button>
+      <button (click)="touchDigit($event)" ion-button color="light">5</button>
+      <button (click)="touchDigit($event)" ion-button color="light">6</button>
+      <button (click)="touchBinaryOperation($event)" ion-button color="secondary">×</button>
+      <br />
+      <button (click)="touchDigit($event)" ion-button color="light">1</button>
+      <button (click)="touchDigit($event)" ion-button color="light">2</button>
+      <button (click)="touchDigit($event)" ion-button color="light">3</button>
+      <button (click)="touchBinaryOperation($event)" ion-button color="secondary">−</button>
+      <br />
+      <button (click)="touchDigit($event)" ion-button color="light">.</button>
+      <button (click)="touchDigit($event)" ion-button color="light">0</button>
+      <button (click)="touchEquals()" ion-button color="light">=</button>
+      <button (click)="touchBinaryOperation($event)" ion-button color="secondary">+</button>
+    </div>
+
+  </ion-content>
+<!-- </div> -->

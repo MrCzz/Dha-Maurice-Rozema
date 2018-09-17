@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Knooppunten toevoegen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let waypoint of waypoints; let i = index;">
+      <ion-label color="halfdark">Fietsknooppunt: </ion-label>
+      <ion-input type="number" clearInput="true" placeholder="Nummer" name="waypoints{{i}}" [(ngModel)]="waypoint.id"></ion-input>
+      <button  color="primary" ion-button icon-only clear item-right (click)="deleteWayPoint(i)">
+          <ion-icon name="remove"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <button color="primary" ion-button icon-only class="left" (click)="addWaypoint()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+  <button color="primary" ion-button class="right" (click)="routeConfirmation()">Route bevestigen</button>
+</ion-content>

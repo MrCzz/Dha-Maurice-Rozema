@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-list>
+
+          <ion-item>
+            <ion-toggle checked="false" [(ngModel)]="configurationService.slidesOn" (ngModelChange)="configurationService.updateSetting('slides')"></ion-toggle>
+            <ion-label>
+              Slides
+            </ion-label>
+            <ion-icon name='albums' item-start></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-toggle checked="false" [(ngModel)]="configurationService.vibrationOn" (ngModelChange)="configurationService.updateSetting('vibration')"></ion-toggle>
+            <ion-label>
+              Vibration
+            </ion-label>
+            <ion-icon name='phone-portrait' item-start></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-toggle checked="false" [(ngModel)]="configurationService.soundOn" (ngModelChange)="configurationService.updateSetting('sound')"></ion-toggle>
+            <ion-label>
+              Sound
+            </ion-label>
+            <ion-icon name='volume-up' item-start></ion-icon>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

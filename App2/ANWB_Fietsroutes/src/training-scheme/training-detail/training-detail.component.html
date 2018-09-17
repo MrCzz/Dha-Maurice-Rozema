@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Training history</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngIf="!isDelayPassed">
+      <ion-col col-12>
+        <div class="centered">
+          <div class="loader"></div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isDelayPassed">
+      <ion-col col-12>
+        <ion-list>
+          <ion-item *ngFor="let history of historyService.history; let i = index;" (click)="onSelect(i)">
+            <ion-icon class="button-position" name="arrow-dropright-circle" color="primary"></ion-icon>
+            <p><b>Training #{{history.id}}</b></p>
+            <p>Datum: {{history.date}}</p>
+            <p>Duur: {{history.time}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

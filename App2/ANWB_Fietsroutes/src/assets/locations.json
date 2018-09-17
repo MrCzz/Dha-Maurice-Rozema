@@ -1,0 +1,40 @@
+{
+  "locations": [
+    {
+      "id": 20,
+      "title": "Barneveld Centrum",
+      "latitude": 52.140233,
+      "longitude": 5.588839
+    },
+    {
+      "id": 21,
+      "title": "Barneveld Zuid",
+      "latitude": 52.1283431,
+      "longitude": 5.6006953
+    },
+    {
+      "id": 22,
+      "title": "Barneveld Zuid 2",
+      "latitude": 52.1283431,
+      "longitude": 5.6006953
+    },
+    {
+      "id": 23,
+      "title": "Barneveld Zuid 3",
+      "latitude": 52.1283431,
+      "longitude": 5.6006953
+    },
+    {
+      "id": 24,
+      "title": "Maurice",
+      "latitude": 52.1340122,
+      "longitude": 5.6067239
+    },
+    {
+      "id": 25,
+      "title": "HAN Arnhem",
+      "latitude": 51.9869527,
+      "longitude": 5.9521113
+    }
+  ]
+}
